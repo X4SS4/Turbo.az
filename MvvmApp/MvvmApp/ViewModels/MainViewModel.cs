@@ -4,13 +4,15 @@ using TurboAz.Models.Messages;
 using TurboAz.Services.Base;
 using TurboAz.ViewModels.Base;
 using System.Threading;
+using System.Collections.ObjectModel;
+using TurboAz.Entities.Announcementы;
 
 public class MainViewModel : ViewModelBase {
-    private int number;
+
+	ObservableCollection<Announcement> announcements = new ObservableCollection<Announcement>();
 	private ViewModelBase activeViewModel;
 	private readonly IMessenger messenger;
 
-	public int Number { get => number; set => base.PropertyChange(out this.number, value); }
 
 	public ViewModelBase ActiveViewModel {
 		get { return activeViewModel; }
