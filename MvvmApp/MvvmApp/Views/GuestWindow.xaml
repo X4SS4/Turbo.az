@@ -4,10 +4,94 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TurboAz.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="#FF7CA0E8">
-    <StackPanel>
-        
-    </StackPanel>
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="1400">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label HorizontalAlignment="Center" Content="Login: " Grid.Column="0"/>
+            <TextBox Grid.Column="1"/>
+            <Label HorizontalAlignment="Center" Content="Password: " Grid.Column="2"/>
+            <TextBox Grid.Column="3"/>
+            <Button Background="Green" Content="Sign In" Grid.Column="4"/>
+            <Button Background="Aquamarine" Content="Sign Up" Grid.Column="5"/>
+        </Grid>
+
+
+        <ListView ItemsSource="{Binding AnnouncementsGuests}" DockPanel.Dock="Bottom" x:Name="lstAnnouncement" Background="Red" >
+            <ListView.View>
+                <GridView>
+                    
+                    
+                    <GridViewColumn Header="Image" Width="300">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageURL}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    
+                    <GridViewColumn Header="Car information"  Width="550">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <UniformGrid>
+                                    <Label Content="Brand"/>
+                                    <TextBlock Text="{Binding AnnouncementsGuest.carInfo.Brand}"/>
+                                    <Label Content="Model"/>
+                                    <TextBlock Text="{Binding carInfo.Model}"/>
+                                    <Label Content="Condition"/>
+                                    <TextBlock Text="{Binding carInfo.Condition}"/>
+                                    <Label Content="Date of manufacture"/>
+                                    <TextBlock Text="{Binding carInfo.ManufactureDate}"/>
+                                    <Label Content="Color"/>
+                                    <TextBlock Text="{Binding carInfo.Color}"/>
+                                    <Label Content="Engine"/>
+                                    <TextBlock Text="{Binding carInfo.Engine}"/>
+                                    <Label Content="Price"/>
+                                    <TextBlock Text="{Binding carInfo.Price}"/>
+                                    <Label Content="Announcement date"/>
+                                    <TextBlock Text="{Binding carInfo.AnnouncementDate}"/>
+                                </UniformGrid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    
+                    <GridViewColumn Header="Description" Width="400">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    
+                    <GridViewColumn Header="Seller Information"  Width="290">
+                        <GridViewColumn.CellTemplate>                                
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Label Content="Name: "/>
+                                    <TextBlock Text="{Binding seller.Name}"/>
+                                    <Label Content="Email: "/>
+                                    <TextBlock Text="{Binding seller.Email}"/>
+                                </StackPanel>
+                             </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+    
+    
 </UserControl>

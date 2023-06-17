@@ -5,11 +5,10 @@ using TurboAz.Services.Base;
 using TurboAz.ViewModels.Base;
 using System.Threading;
 using System.Collections.ObjectModel;
-using TurboAz.Entities.Announcementы;
+using TurboAz.Entities.Announcements;
 
 public class MainViewModel : ViewModelBase {
 
-	ObservableCollection<Announcement> announcements = new ObservableCollection<Announcement>();
 	private ViewModelBase activeViewModel;
 	private readonly IMessenger messenger;
 

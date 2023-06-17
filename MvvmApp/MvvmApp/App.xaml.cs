@@ -30,6 +30,8 @@ namespace TurboAz {
         private void ConfigureContainer() {
             ServiceContainer.RegisterSingleton<IMessenger, Messenger>();
 
+            ServiceContainer.RegisterSingleton<UserViewModel>();
+            ServiceContainer.RegisterSingleton<AdminViewModel>();
             ServiceContainer.RegisterSingleton<GuestViewModel>();
             ServiceContainer.RegisterSingleton<MainViewModel>();
             ServiceContainer.RegisterSingleton<ModeratorViewModel>();
