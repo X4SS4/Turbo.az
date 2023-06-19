@@ -31,12 +31,12 @@ public class GuestViewModel : ViewModelBase {
         {
             ImageURL = "https://turbo.azstatic.com/uploads/full/2023%2F03%2F27%2F17%2F02%2F58%2Ffb5cafa4-c7dd-4a45-9082-e1933515020b%2F98123_vH-vdKbLeW-uyh8dfwHPvQ.jpg",
             Description = "Chevrolet Azermash CP Yeni model Cobalt LTZ 2023 Avtomobilde mövcuddur Elektrik şüşə qaldiranlar Kondisioner Usb Abs Yüngül lehimli diskler 195/65/R15 Nağd köçürmə və lizing vasitəsi ilə satış mövcuddur Lizing şərtləri İlkin ödəniş 4500 AZNQiymətə DYPİ qeydiyyatı daxil deyildir",
-            seller = new UserBase
+            Seller = new UserBase
             {
                 Name = "Zabil",
                 Email = "xas.zab.kam@gmail.com"
             },
-            carInfo = new CarInfo
+            CarInformation = new CarInfo
             {
                 Brand = "Maybach",
                 Model = "Ulyotni",
