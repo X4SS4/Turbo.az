@@ -27,7 +27,7 @@ namespace TurboAz.Entities.Announcements
         public CarInfo CarInformation
         {
             get { return carInformation; }
-            set { PropertyChange(out this.carInformation, value); }
+            set { PropertyChange(out carInformation, value); }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
