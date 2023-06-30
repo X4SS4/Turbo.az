@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              d:DesignHeight="800" d:DesignWidth="1400">
     <DockPanel>
-        <Grid DockPanel.Dock="Top">
+        <Grid Background="MistyRose" DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -24,8 +24,18 @@
             <Button Background="Aquamarine" Content="Sign Up" Grid.Column="5"/>
         </Grid>
 
+        <DockPanel Background="MistyRose" DockPanel.Dock="Top" Height="100">
+            <UniformGrid>
+                <Label Content="Brand"/>
+                <TextBox x:Name="SearchByBrandTB" VerticalAlignment="Center"/>
+                <Label Content="Model"/>
+                <TextBox x:Name="SearchByModelTB" IsEnabled="False" VerticalAlignment="Center"/>
+            </UniformGrid>
+            
+        </DockPanel>
 
-        <ListView ItemsSource="{Binding AnnouncementsGuests}" DockPanel.Dock="Bottom" x:Name="lstAnnouncement" Background="Red" >
+
+        <ListView ItemsSource="{Binding AnnouncementsGuests}" DockPanel.Dock="Bottom" x:Name="lstAnnouncement" Background="Chocolate" >
             <ListView.View>
                 <GridView>
                     
@@ -37,29 +47,31 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    
-                    
+
+
                     <GridViewColumn Header="Car information"  Width="550">
-                        <GridViewColumn.CellTemplate>
+                        <GridViewColumn.CellTemplate >
                             <DataTemplate>
-                                <UniformGrid>
-                                    <Label Content="Brand"/>
-                                    <TextBlock Text="{Binding AnnouncementsGuest.carInfo.Brand}"/>
-                                    <Label Content="Model"/>
-                                    <TextBlock Text="{Binding carInfo.Model}"/>
-                                    <Label Content="Condition"/>
-                                    <TextBlock Text="{Binding carInfo.Condition}"/>
-                                    <Label Content="Date of manufacture"/>
-                                    <TextBlock Text="{Binding carInfo.ManufactureDate}"/>
-                                    <Label Content="Color"/>
-                                    <TextBlock Text="{Binding carInfo.Color}"/>
-                                    <Label Content="Engine"/>
-                                    <TextBlock Text="{Binding carInfo.Engine}"/>
-                                    <Label Content="Price"/>
-                                    <TextBlock Text="{Binding carInfo.Price}"/>
-                                    <Label Content="Announcement date"/>
-                                    <TextBlock Text="{Binding carInfo.AnnouncementDate}"/>
-                                </UniformGrid>
+                                <Border BorderBrush="Black" BorderThickness="1">
+                                    <UniformGrid>
+                                        <Label Content="Brand"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.Brand}"/>
+                                        <Label Content="Model"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.Model}"/>
+                                        <Label Content="Condition"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.Condition}"/>
+                                        <Label Content="Date of manufacture"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.ManufactureDate}"/>
+                                        <Label Content="Color"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.Color}"/>
+                                        <Label Content="Engine"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.Engine}"/>
+                                        <Label Content="Price"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.Price}"/>
+                                        <Label Content="Announcement date"/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding CarInformation.AnnouncementDate}"/>
+                                    </UniformGrid>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -77,12 +89,14 @@
                     <GridViewColumn Header="Seller Information"  Width="290">
                         <GridViewColumn.CellTemplate>                                
                             <DataTemplate>
-                                <StackPanel>
-                                    <Label Content="Name: "/>
-                                    <TextBlock Text="{Binding seller.Name}"/>
-                                    <Label Content="Email: "/>
-                                    <TextBlock Text="{Binding seller.Email}"/>
-                                </StackPanel>
+                                <Border BorderBrush="Black" BorderThickness="1">
+                                    <UniformGrid>
+                                        <Label HorizontalAlignment="Center" Content="Name: "/>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding Seller.Name}"/>
+                                        <Label HorizontalAlignment="Center" Content="Email: "/>
+                                        <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="{Binding Seller.Email}"/>
+                                    </UniformGrid>
+                                </Border>
                              </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

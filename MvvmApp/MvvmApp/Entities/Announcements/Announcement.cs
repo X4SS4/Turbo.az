@@ -16,14 +16,14 @@ namespace TurboAz.Entities.Announcements
         public string ImageURL { get; set; }
         public string? Description { get; set; }
 
-        private UserBase seller = new UserBase();
+        private UserBase seller;
         public UserBase Seller
         {
             get { return seller; }
             set { PropertyChange(out this.seller, value); }
         }
 
-        private CarInfo carInformation = new CarInfo();
+        private CarInfo carInformation;
         public CarInfo CarInformation
         {
             get { return carInformation; }
